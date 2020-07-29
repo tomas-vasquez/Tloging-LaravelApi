@@ -1,0 +1,13 @@
+/vendor
+/storage
+/docs
+/.idea
+Homestead.json
+Homestead.yaml
+.env
+.phpunit.result.cache
+*.bat
+
+*.rar
+*.prettierrc
+*editorconfig
