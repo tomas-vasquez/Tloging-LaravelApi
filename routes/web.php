@@ -23,13 +23,19 @@ $router->group(['prefix' => 'v1'], function () use ($router) {
     $router->post('user/register', "UsersController@register");
 
     $router->get('academy/getall', "AcademyController@get_all");
-    $router->get('academy/get_items/{item_name}', "AcademyController@get_items");
+    $router->get('academy/get_items/{course_name}', "AcademyController@get_items");
 
+    $router->get("auto_refresher","AutoRefresher@index");
 
-
+    
+ $router->get('comments', "CommentsController@get_comments");
 
 
     $router->group(["middleware" => ["auth"]], function () use ($router) {
+
+       
+        $router->post('comments', "CommentsController@add_comment");
+
 
         $router->get('user/logout', "UsersController@logout");
 

@@ -15,7 +15,9 @@ class EventServiceProvider extends ServiceProvider
 
         \App\Events\UserDataChanged::class => [
             \App\Listeners\UpdateUserDataCacheListener::class,
+            \App\Listeners\UpdateCommentsListener::class,
         ],
+
         \App\Events\PayReportEvent::class => [
             \App\Listeners\UpdatePayReportCacheListener::class,
         ],
